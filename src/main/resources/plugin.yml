@@ -1,0 +1,29 @@
+name: Cmarkup
+version: 0.1.0
+main: me.qualterz.minecraft.cmarkup.plugin.CmarkupPlugin
+description: Markup containers with ease
+author: qualterz
+website: https://github.com/qualterz/cmarkup
+api-version: '1.20'
+
+commands:
+  slot:
+    description: Set slot key name
+  title:
+    description: Set title for container
+  edit:
+    description: Open markup for editing or reviewing
+  pick:
+    description: Choose markup entry for manipulations
+  create:
+    description: Create markup entry
+  delete:
+    description: Delete markup entry
+  commit:
+    description: Save changes made to markup entry
+  reset:
+    description: Reset changes made to markup entry
+  list:
+    description: List of stored markup entries
+  types:
+    description: List of available container types
