@@ -8,7 +8,7 @@ import org.bukkit.event.inventory.InventoryType
 
 class ListContainerTypesCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-        sender.sendMessage(Component.text(InventoryType.entries.joinToString(separator = "\n") { it.name.lowercase() }))
+        sender.sendMessage(Component.text(InventoryType.entries.joinToString(separator = "\n") { it.name }))
         return true
     }
 }

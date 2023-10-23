@@ -7,13 +7,23 @@ website: https://github.com/qualterz/cmarkup
 api-version: '1.20'
 
 commands:
-  set:
-    description: Set title or identifier for slots
-  open:
-    description: Open container markup for view or edit
+  slot:
+    description: Set slot key name
+  title:
+    description: Set title for container
+  edit:
+    description: Open markup for editing or reviewing
+  pick:
+    description: Choose markup entry for manipulations
   create:
-    description: Create container markup entry
+    description: Create markup entry
   delete:
-    description: Delete specific container markup entry
+    description: Delete markup entry
+  commit:
+    description: Save changes made to markup entry
+  reset:
+    description: Reset changes made to markup entry
+  list:
+    description: List of stored markup entries
   types:
     description: List of available container types
