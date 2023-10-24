@@ -8,5 +8,5 @@ data class ContainerMarkup(
     val title: String?,
     val size: Int?,
     val type: InventoryType?,
-    val slots: Map<String, Collection<Int>>
+    val slots: MutableMap<String, MutableSet<Int>>
 )
