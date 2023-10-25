@@ -1,7 +1,7 @@
 package me.qualterz.minecraft.cmarkup.plugin.commands
 
 import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
-import me.qualterz.minecraft.cmarkup.plugin.services.abstractions.IMarkupStorage
+import me.qualterz.minecraft.cmarkup.plugin.abstractions.IMarkupStorage
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit
 import org.bukkit.command.Command

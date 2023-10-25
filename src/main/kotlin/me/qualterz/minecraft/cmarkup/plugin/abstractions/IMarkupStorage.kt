@@ -1,4 +1,4 @@
-package me.qualterz.minecraft.cmarkup.plugin.services.abstractions
+package me.qualterz.minecraft.cmarkup.plugin.abstractions
 
 import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
 
