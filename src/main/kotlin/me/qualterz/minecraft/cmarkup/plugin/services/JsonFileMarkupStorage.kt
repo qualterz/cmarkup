@@ -2,7 +2,7 @@ package me.qualterz.minecraft.cmarkup.plugin.services
 
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import me.qualterz.minecraft.cmarkup.core.primitives.ContainerMarkup
+import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
 import me.qualterz.minecraft.cmarkup.plugin.services.abstractions.IMarkupStorage
 import java.io.File
 

@@ -1,7 +1,8 @@
 package me.qualterz.minecraft.cmarkup.plugin.inventoryholders
 
-import me.qualterz.minecraft.cmarkup.core.primitives.ContainerMarkup
+import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
 import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.format.TextColor
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.inventory.Inventory
@@ -12,11 +13,13 @@ class MarkupInventory(
     val markup: ContainerMarkup
 ) : InventoryHolder{
     private val inventory: Inventory = if (markup.title != null && markup.type != null)
-        Bukkit.createInventory(this, markup.type, Component.text(markup.title))
+        Bukkit.createInventory(this, markup.type, Component.text(markup.title.toString(),
+            markup.titleColor?.let { TextColor.fromCSSHexString(it) }))
     else if (markup.type != null)
         Bukkit.createInventory(this, markup.type)
     else if (markup.title != null && markup.size != null)
-        Bukkit.createInventory(this, markup.size, Component.text(markup.title))
+        Bukkit.createInventory(this, markup.size, Component.text(markup.title.toString(),
+            markup.titleColor?.let { TextColor.fromCSSHexString(it) }))
     else if (markup.size != null)
         Bukkit.createInventory(this, markup.size)
     else throw IllegalArgumentException("Cannot construct container with markup: $markup")

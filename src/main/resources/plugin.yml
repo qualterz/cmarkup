@@ -9,15 +9,44 @@ api-version: '1.20'
 commands:
   title:
     description: Set title for container
+    usage: /title <markup> <title> <color>
+    permission: cmarkup
+    permission-message:
+      You need to be an operator or have permission to change markup title
   open:
-    description: Open markup for editing or reviewing
+    description: Open markup for slots editing or reviewing
+    usage: /open <markup> <slot_key>
+    permission: cmarkup
+    permission-message:
+      You need to be an operator or have permission to open markup
   create:
     description: Create markup entry
+    usage: /create <name> <specifier> <value>
+    permission: cmarkup
+    permission-message:
+      You need to be an operator or have permission to create markup entry
   delete:
     description: Delete markup entry
+    usage: /delete <markup>
+    permission: cmarkup
+    permission-message:
+      You need to be an operator or have permission to delete markup
   list:
     description: List of stored markup entries
+    usage: /list
+    permission: cmarkup
+    permission-message:
+      You need to be an operator or have permission to view list of markup entries
   slots:
     description: List of stored markup slots
+    usage: /slots <markup>
+    permission: cmarkup
+    permission-message:
+      You need to be an operator or have permission to view slot keys of a markup
   types:
     description: List of available container types
+    usage: /types
+permissions:
+  cmarkup:
+    description: Gives access to all Cmarkup actions and commands
+    default: op

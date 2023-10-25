@@ -26,6 +26,7 @@ class CmarkupPlugin : JavaPlugin(), Listener {
         Bukkit.getPluginManager().registerEvents(SessionListener(playersSlotKeys, playersMarkupNames), this)
 
         getCommand("open")?.setExecutor(OpenMarkupCommand(playersSlotKeys, playersMarkupNames, markupStorage))
+        getCommand("title")?.setExecutor(SetMarkupTitleCommand(markupStorage))
         getCommand("create")?.setExecutor(CreateMarkupCommand(markupStorage))
         getCommand("delete")?.setExecutor(DeleteMarkupCommand(markupStorage))
         getCommand("slots")?.setExecutor(ListMarkupSlotsCommand(markupStorage))

@@ -1,6 +1,6 @@
 package me.qualterz.minecraft.cmarkup.plugin.services.abstractions
 
-import me.qualterz.minecraft.cmarkup.core.primitives.ContainerMarkup
+import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
 
 interface IMarkupStorage {
     fun removeMarkup(name: String)
