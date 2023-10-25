@@ -1,11 +1,12 @@
-package me.qualterz.minecraft.cmarkup.core.primitives
+package me.qualterz.minecraft.cmarkup.plugin.data
 
 import kotlinx.serialization.Serializable
 import org.bukkit.event.inventory.InventoryType
 
 @Serializable
 data class ContainerMarkup(
-    val title: String?,
+    var title: String?,
+    var titleColor: String?,
     val size: Int?,
     val type: InventoryType?,
     val slots: MutableMap<String, MutableSet<Int>>

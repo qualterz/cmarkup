@@ -10,7 +10,15 @@ class ListMarkupsCommand(
     val markupStorage: IMarkupStorage
 ) : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-        sender.sendMessage(Component.text(markupStorage.listMarkups().joinToString(separator = "\n")))
+        val markups = markupStorage.listMarkups()
+
+        sender.sendMessage(
+            if (markups.isEmpty()) {
+                Component.text("No slots present in markup")
+            } else {
+                Component.text(markups.joinToString(separator = "\n"))
+            }
+        )
 
         return true
     }

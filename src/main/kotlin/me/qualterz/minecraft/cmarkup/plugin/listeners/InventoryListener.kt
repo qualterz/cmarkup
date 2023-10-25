@@ -37,6 +37,9 @@ class InventoryListener(
 
         when {
             event.isLeftClick -> {
+                if (!markup.slots.containsKey(playerSlotKey))
+                    markup.slots[playerSlotKey] = HashSet()
+
                 markup.slots[playerSlotKey]!!.add(event.slot)
 
                 inventoryHolder.setSlotKey(event.slot, playerSlotKey)

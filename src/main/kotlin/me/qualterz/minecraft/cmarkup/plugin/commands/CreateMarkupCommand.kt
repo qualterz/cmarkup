@@ -1,6 +1,6 @@
 package me.qualterz.minecraft.cmarkup.plugin.commands
 
-import me.qualterz.minecraft.cmarkup.core.primitives.ContainerMarkup
+import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
 import me.qualterz.minecraft.cmarkup.plugin.services.abstractions.IMarkupStorage
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit
@@ -87,6 +87,7 @@ class CreateMarkupCommand(
         markupStorage.saveMarkup(
             markupName, ContainerMarkup(
                 title = null,
+                titleColor = null,
                 size = containerSize,
                 type = containerType,
                 slots = mutableMapOf()
