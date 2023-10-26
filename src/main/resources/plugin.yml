@@ -31,6 +31,12 @@ commands:
     permission: cmarkup
     permission-message:
       You need to be an operator or have permission to delete markup
+  rename:
+    description: Rename markup entry
+    usage: /rename <markup> <name>
+    permission: cmarkup
+    permission-message:
+      You need to be an operator or have permission to rename markup
   list:
     description: List of stored markup entries
     usage: /list

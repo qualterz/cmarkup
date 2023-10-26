@@ -2,10 +2,9 @@ package me.qualterz.minecraft.cmarkup.plugin.listeners
 
 import me.qualterz.minecraft.cmarkup.plugin.PlayersMarkupNames
 import me.qualterz.minecraft.cmarkup.plugin.PlayersSlotKeys
-import me.qualterz.minecraft.cmarkup.plugin.inventoryholders.MarkupInventory
+import me.qualterz.minecraft.cmarkup.plugin.inventoryholders.MarkupViewInventory
 import me.qualterz.minecraft.cmarkup.plugin.abstractions.IMarkupStorage
 import net.kyori.adventure.text.Component
-import net.kyori.adventure.text.TextComponent
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.inventory.InventoryClickEvent
@@ -21,7 +20,7 @@ class InventoryListener(
 
         val inventoryHolder = inventory?.getHolder(false)
 
-        if (inventory == null || inventoryHolder !is MarkupInventory)
+        if (inventory == null || inventoryHolder !is MarkupViewInventory)
             return
 
         event.isCancelled = true

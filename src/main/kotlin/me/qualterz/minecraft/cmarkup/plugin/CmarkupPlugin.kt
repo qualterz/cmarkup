@@ -1,11 +1,11 @@
 package me.qualterz.minecraft.cmarkup.plugin
 
+import me.qualterz.minecraft.cmarkup.plugin.abstractions.IMarkupStorage
 import me.qualterz.minecraft.cmarkup.plugin.commands.*
 import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
 import me.qualterz.minecraft.cmarkup.plugin.listeners.InventoryListener
 import me.qualterz.minecraft.cmarkup.plugin.listeners.SessionListener
 import me.qualterz.minecraft.cmarkup.plugin.services.JsonFileMarkupStorage
-import me.qualterz.minecraft.cmarkup.plugin.abstractions.IMarkupStorage
 import org.bukkit.Bukkit
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
@@ -30,6 +30,7 @@ class CmarkupPlugin : JavaPlugin(), Listener {
         getCommand("title")?.setExecutor(SetMarkupTitleCommand(markupStorage))
         getCommand("create")?.setExecutor(CreateMarkupCommand(markupStorage))
         getCommand("delete")?.setExecutor(DeleteMarkupCommand(markupStorage))
+        getCommand("rename")?.setExecutor(RenameMarkupCommand(markupStorage))
         getCommand("slots")?.setExecutor(ListMarkupSlotsCommand(markupStorage))
         getCommand("list")?.setExecutor(ListMarkupsCommand(markupStorage))
         getCommand("types")?.setExecutor(ListInventoryTypesCommand())

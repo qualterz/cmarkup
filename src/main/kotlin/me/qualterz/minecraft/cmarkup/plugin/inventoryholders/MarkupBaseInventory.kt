@@ -4,14 +4,12 @@ import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.TextColor
 import org.bukkit.Bukkit
-import org.bukkit.Material
 import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.InventoryHolder
-import org.bukkit.inventory.ItemStack
 
-class MarkupInventory(
+open class MarkupBaseInventory(
     val markup: ContainerMarkup
-) : InventoryHolder{
+) : InventoryHolder {
     private val inventory: Inventory = if (markup.title != null && markup.type != null)
         Bukkit.createInventory(this, markup.type, Component.text(markup.title.toString(),
             markup.titleColor?.let { TextColor.fromCSSHexString(it) }))
@@ -22,25 +20,9 @@ class MarkupInventory(
             markup.titleColor?.let { TextColor.fromCSSHexString(it) }))
     else if (markup.size != null)
         Bukkit.createInventory(this, markup.size)
-    else throw IllegalArgumentException("Cannot construct container with markup: $markup")
-
-    private val slotKeyMaterial = Material.BARRIER
+    else throw IllegalArgumentException("Cannot create inventory for markup: $markup")
 
     override fun getInventory(): Inventory {
         return inventory
-    }
-
-    fun setSlotKey(index: Int, key: String) {
-        inventory.setItem(index, ItemStack(slotKeyMaterial).apply {
-            editMeta { it.displayName(Component.text(key)) }
-        })
-    }
-
-    fun unsetSlotKey(index: Int) {
-        inventory.setItem(index, ItemStack(Material.AIR))
-    }
-
-    fun setSlotKeyView(key: String) {
-        markup.slots[key]?.forEach{ setSlotKey(it, key) }
     }
 }
