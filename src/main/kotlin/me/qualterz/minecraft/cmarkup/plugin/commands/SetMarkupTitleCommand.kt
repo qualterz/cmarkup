@@ -15,7 +15,7 @@ class SetMarkupTitleCommand(
         val markupTitleColor = args?.getOrNull(2)
 
         if (markupName == null) {
-            sender.sendMessage(Component.text("Please specify markup name"))
+            sender.sendMessage(Component.text("Please specify markup"))
             return false
         }
 

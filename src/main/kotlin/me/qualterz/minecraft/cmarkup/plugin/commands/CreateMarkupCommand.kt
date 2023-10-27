@@ -20,7 +20,7 @@ class CreateMarkupCommand(
         val inventorySpecifierValue = args?.getOrNull(2)?.lowercase()
 
         if (markupName == null) {
-            sender.sendMessage(Component.text("Please specify markup name"))
+            sender.sendMessage(Component.text("Please specify markup"))
             return false
         }
 

@@ -11,7 +11,38 @@ plugins {
 }
 
 group = "me.qualterz.minecraft"
-version = "1.0-SNAPSHOT"
+version = "0.1.1"
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/qualterz/cmarkup")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = project.group.toString()
+            artifactId = "cmarkup"
+            version = project.version.toString()
+
+            from(components["java"])
+
+            versionMapping {
+                usage("java-api") {
+                    fromResolutionOf("runtimeClasspath")
+                }
+                usage("java-runtime") {
+                    fromResolutionResult()
+                }
+            }
+        }
+    }
+}
 
 publishing {
     repositories {

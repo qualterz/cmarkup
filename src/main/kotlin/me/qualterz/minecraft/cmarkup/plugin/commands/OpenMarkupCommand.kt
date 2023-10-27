@@ -2,7 +2,7 @@ package me.qualterz.minecraft.cmarkup.plugin.commands
 
 import me.qualterz.minecraft.cmarkup.plugin.PlayersMarkupNames
 import me.qualterz.minecraft.cmarkup.plugin.PlayersSlotKeys
-import me.qualterz.minecraft.cmarkup.plugin.inventoryholders.MarkupInventory
+import me.qualterz.minecraft.cmarkup.plugin.inventoryholders.MarkupViewInventory
 import me.qualterz.minecraft.cmarkup.plugin.abstractions.IMarkupStorage
 import net.kyori.adventure.text.Component
 import org.bukkit.command.Command
@@ -22,7 +22,7 @@ class OpenMarkupCommand(
         val argumentSlotKey = args?.getOrNull(1)
 
         if (markupName == null) {
-            sender.sendMessage(Component.text("Please specify markup name"))
+            sender.sendMessage(Component.text("Please specify markup"))
             return false
         }
 
@@ -37,7 +37,7 @@ class OpenMarkupCommand(
 
         val markup = markupStorage.loadMarkup(markupName)
 
-        val markupInventory = MarkupInventory(markup)
+        val markupInventory = MarkupViewInventory(markup)
 
         val playerSlotKey = playersSlotKeys[sender.uniqueId]
 

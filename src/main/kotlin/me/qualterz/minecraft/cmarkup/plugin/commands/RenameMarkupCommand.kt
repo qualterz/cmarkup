@@ -7,16 +7,22 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
-class DeleteMarkupCommand(
+class RenameMarkupCommand(
     private val markupStorage: IMarkupStorage
 ) : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         if (sender !is Player) return false
 
         val markupName = args?.getOrNull(0)?.lowercase()
+        val markupRenameName = args?.getOrNull(1)?.lowercase()
 
         if (markupName == null) {
             sender.sendMessage(Component.text("Please specify markup"))
+            return false
+        }
+
+        if (markupRenameName == null) {
+            sender.sendMessage(Component.text("Please specify new markup name"))
             return false
         }
 
@@ -25,9 +31,17 @@ class DeleteMarkupCommand(
             return false
         }
 
-        markupStorage.removeMarkup(markupName)
+        if (markupStorage.isMarkupExists(markupRenameName)) {
+            sender.sendMessage(Component.text("Markup with the same name already exists"))
+            return false
+        }
 
-        sender.sendMessage("Markup successfully deleted")
+        val markup = markupStorage.loadMarkup(markupName)
+
+        markupStorage.removeMarkup(markupName)
+        markupStorage.saveMarkup(markupRenameName, markup)
+
+        sender.sendMessage("Markup successfully renamed")
 
         return true
     }
