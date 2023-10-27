@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "me.qualterz.minecraft"
-version = "1.0-SNAPSHOT"
+version = "0.1.1"
 
 publishing {
     repositories {
