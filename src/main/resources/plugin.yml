@@ -1,6 +1,6 @@
 name: Cmarkup
 version: 0.1.0
-main: me.qualterz.minecraft.cmarkup.plugin.CmarkupPlugin
+main: io.github.qualterz.cmarkup.CmarkupPlugin
 description: Markup containers with ease
 author: qualterz
 website: https://github.com/qualterz/cmarkup
