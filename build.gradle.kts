@@ -10,7 +10,7 @@ plugins {
     id("xyz.jpenilla.run-paper") version "2.2.0"
 }
 
-group = "io.qualterz.github"
+group = "io.github.qualterz"
 version = "0.1.2"
 
 publishing {
