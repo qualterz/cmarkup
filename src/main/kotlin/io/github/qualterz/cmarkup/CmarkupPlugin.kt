@@ -1,11 +1,11 @@
-package me.qualterz.minecraft.cmarkup.plugin
+package io.github.qualterz.cmarkup
 
-import me.qualterz.minecraft.cmarkup.plugin.abstractions.IMarkupStorage
-import me.qualterz.minecraft.cmarkup.plugin.commands.*
-import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
-import me.qualterz.minecraft.cmarkup.plugin.listeners.InventoryListener
-import me.qualterz.minecraft.cmarkup.plugin.listeners.SessionListener
-import me.qualterz.minecraft.cmarkup.plugin.services.JsonFileMarkupStorage
+import io.github.qualterz.cmarkup.abstractions.IMarkupStorage
+import io.github.qualterz.cmarkup.commands.*
+import io.github.qualterz.cmarkup.data.ContainerMarkup
+import io.github.qualterz.cmarkup.listeners.InventoryListener
+import io.github.qualterz.cmarkup.listeners.SessionListener
+import io.github.qualterz.cmarkup.services.JsonFileMarkupStorage
 import org.bukkit.Bukkit
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin

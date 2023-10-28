@@ -1,6 +1,6 @@
-package me.qualterz.minecraft.cmarkup.plugin.inventoryholders
+package io.github.qualterz.cmarkup.inventoryholders
 
-import me.qualterz.minecraft.cmarkup.plugin.data.ContainerMarkup
+import io.github.qualterz.cmarkup.data.ContainerMarkup
 import net.kyori.adventure.text.Component
 import org.bukkit.Material
 import org.bukkit.inventory.ItemStack

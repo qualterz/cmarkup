@@ -1,4 +1,4 @@
-package me.qualterz.minecraft.cmarkup.plugin.commands
+package io.github.qualterz.cmarkup.commands
 
 import net.kyori.adventure.text.Component
 import org.bukkit.command.Command

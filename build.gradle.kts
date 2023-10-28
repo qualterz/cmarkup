@@ -10,8 +10,8 @@ plugins {
     id("xyz.jpenilla.run-paper") version "2.2.0"
 }
 
-group = "me.qualterz.minecraft"
-version = "0.1.1"
+group = "io.qualterz.github"
+version = "0.1.2"
 
 publishing {
     repositories {
@@ -27,38 +27,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = project.group.toString()
-            artifactId = "cmarkup"
-            version = project.version.toString()
-
-            from(components["java"])
-
-            versionMapping {
-                usage("java-api") {
-                    fromResolutionOf("runtimeClasspath")
-                }
-                usage("java-runtime") {
-                    fromResolutionResult()
-                }
-            }
-        }
-    }
-}
-
-publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/qualterz/cmarkup")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = project.group.toString()
-            artifactId = "cmarkup"
+            artifactId = rootProject.name
             version = project.version.toString()
 
             from(components["java"])

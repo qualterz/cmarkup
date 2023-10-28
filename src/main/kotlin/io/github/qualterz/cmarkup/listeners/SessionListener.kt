@@ -1,7 +1,7 @@
-package me.qualterz.minecraft.cmarkup.plugin.listeners
+package io.github.qualterz.cmarkup.listeners
 
-import me.qualterz.minecraft.cmarkup.plugin.PlayersMarkupNames
-import me.qualterz.minecraft.cmarkup.plugin.PlayersSlotKeys
+import io.github.qualterz.cmarkup.PlayersMarkupNames
+import io.github.qualterz.cmarkup.PlayersSlotKeys
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerQuitEvent

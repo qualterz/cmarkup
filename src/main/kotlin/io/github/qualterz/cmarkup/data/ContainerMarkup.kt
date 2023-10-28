@@ -1,4 +1,4 @@
-package me.qualterz.minecraft.cmarkup.plugin.data
+package io.github.qualterz.cmarkup.data
 
 import kotlinx.serialization.Serializable
 import org.bukkit.event.inventory.InventoryType
