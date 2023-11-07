@@ -12,7 +12,7 @@ Each slot in container may have one or many keys.
 
 ### Container-based menus
 
-Suppose the development of 9 slots paged menu where the last slot is the load next button, the pre-last slot is the reset to the first page button, and the other slots are page items.
+Suppose the development of 9 slots paged menu where the last slot is the load next button, the pre-last slot is the reset to the first page button, and the first slots are page items.
 
 The JSON representation of this menu:
 
