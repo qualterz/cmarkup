@@ -41,7 +41,7 @@ In code, to handle user interactions with slots, these slot keys could be refere
 // Load a markup using loader instance
 val markup: ContainerMarkup = loader.loadMarkup("paged_menu")
 
-// Open an inventory for a player using preloaded container markup
+// Open an inventory for a player using container markup
 player.openInventory(MarkupBaseInventory(markup).inventory)
 
 // Handle inventory click event
