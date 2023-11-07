@@ -35,7 +35,7 @@ The JSON representation of this container menu:
 
 Here is first 7 slots are marked with `page_item` key, pre-last with `page_reset`, and last with `page_next`.
 
-In code, to handle user interactions with slots, these slot keys could be referenced to implement specific behaviour.
+In code, to handle user interactions with slots, these slot keys could be referenced to implement specific behaviour:
 
 ```kotlin
 // Load a markup using loader instance
