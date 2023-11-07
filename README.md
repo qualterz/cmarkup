@@ -6,7 +6,7 @@ Container markup holds container metadata and slot keys.
 
 Container metadata is used for in-game inventory creation.
 
-Slot keys is a map of strings and slot indicies sets.
+Slot keys is a map of strings and slot index sets.
 
 Each slot in container may have one or many keys.
 
