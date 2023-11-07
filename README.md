@@ -2,7 +2,9 @@
 Minecraft server plugin to markup containers with ease.
 
 ## Theory
-Cmarkup is a data class that holds data required for inventory creation, but alongside it stores slot keys.
+Container markup holds container metadata and slot keys.
+
+Container metadata is used for in-game inventory creation.
 
 Slot keys is a map of strings and slot indicies set.
 
@@ -12,9 +14,10 @@ Each slot in container may have one or many keys.
 
 ### Container-based menus
 
-Suppose the development of 9 slots paged menu where the last slot is the load next button, the pre-last slot is the reset to the first page button, and the other first slots are page items.
+Suppose the development of 9 slots paged menu where the last slot is the load next button,
+the pre-last slot is the reset to the first page button, and the other first slots are page items.
 
-The JSON representation of this menu:
+The JSON representation of this container menu:
 
 ```json
 {
@@ -32,7 +35,32 @@ The JSON representation of this menu:
 
 Here is first 7 slots are marked with `page_item` key, pre-last with `page_reset`, and last with `page_next`.
 
-In code, to handle user interactions with slots, these slot keys could be referenced to implement specific behaviour.
+In code, to handle user interactions with slots, these slot keys could be referenced to implement specific behaviour:
+
+```kotlin
+// Load a markup using loader instance
+val markup: ContainerMarkup = loader.loadMarkup("paged_menu")
+
+// Open an inventory for a player using container markup
+player.openInventory(MarkupBaseInventory(markup).inventory)
+
+// Handle inventory click event
+
+// Check if player clicked slot with key `page_next`
+if (markup.slots["page_next"].contains(event.slot)) {
+    setNextPage()
+}
+
+// Check if player clicked slot with key `page_reset`
+if (markup.slots["page_reset"].contains(event.slot)) {
+    setInitialPage()    
+}
+
+// Set items of a page
+markup.slots["page_item"].foreach {
+    event.clickedInventory.setItem(it, nextPageItem())
+}
+```
 
 # Usage
 
