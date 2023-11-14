@@ -55,6 +55,9 @@ class InventoryListener(
 
         val markupName = playersMarkupNames[event.whoClicked.uniqueId]!!
 
-        markupStorage.saveMarkup(markupName, inventoryHolder.markup)
+        for ((key, slots) in markup.slots)
+            markup.slots[key] = slots.toSortedSet()
+
+        markupStorage.saveMarkup(markupName, markup)
     }
 }
